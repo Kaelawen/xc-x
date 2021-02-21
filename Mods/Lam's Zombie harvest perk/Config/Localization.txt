@@ -1,0 +1,4 @@
+Key,UsedInMainMenu,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+
+ButcherKnife,,items,Item,New,Butcher Knife,,,,,
+ButcherKnifeDesc,,items,Item,New,You will slice through zombie corpses\nlike a hot knife through butter.\nBe aware that it has a very short range so it ain't suited for zombie kills.\nIn fact the range is so short you have to crawl to harvest anything.\nAlso very well suited for animal harvest.,,,,,

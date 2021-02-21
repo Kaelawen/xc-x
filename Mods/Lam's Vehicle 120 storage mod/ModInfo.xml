@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <ModInfo>
+        <Name value="Lam's Vehicle storage mod" />
+        <Description value=" increasing the storage on all vehicles to 120." />
+        <Author value="Lam" />
+        <Version value="19" />
+    </ModInfo>
+</xml>

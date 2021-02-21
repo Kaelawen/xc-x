@@ -1,0 +1,89 @@
+<configs>
+
+<remove xpath="/windows/window[@name='windowVehicleStorage']/panel[@name='header']/label[@name='lootName']"/>
+
+<setattribute xpath="/windows/window[@name='windowVehicleStorage']/grid[@name='queue']" name="rows">15</setattribute>
+<setattribute xpath="/windows/window[@name='windowVehicleStorage']/grid[@name='queue']" name="cols">15</setattribute>
+<setattribute xpath="/windows/window[@name='windowVehicleStorage']/grid[@name='queue']" name="pos">-50,0</setattribute>
+<setattribute xpath="/windows/window[@name='windowVehicleStorage']/panel[@name='header']" name="pos">50,50</setattribute>
+
+<remove xpath="/windows/window[@name='windowVehicleStorage']/panel[@name='header']/sprite[@name='windowIcon']"/>
+	
+	<set xpath="/windows/window[@name='windowVehicleStorage']/panel[@name='header']/rect[@controller='ContainerStandardControls']/@pos">3,-49</set>
+	<set xpath="/windows/window[@name='windowVehicleStorage']/panel[@name='header']/rect[@controller='ContainerStandardControls']/button[@name='btnSort']/@sprite">ui_game_symbol_backpack</set>
+	<set xpath="/windows/window[@name='windowVehicleStorage']/panel[@name='header']/rect[@controller='ContainerStandardControls']/button[@name='btnSort']/@pos">-55,-25</set>
+	<set xpath="/windows/window[@name='windowVehicleStorage']/panel[@name='header']/rect[@controller='ContainerStandardControls']/button[@name='btnMoveAll']/@pos">274,25</set>
+	<set xpath="/windows/window[@name='windowVehicleStorage']/panel[@name='header']/rect[@controller='ContainerStandardControls']/button[@name='btnMoveFillAndSmart']/@pos">234,25</set>
+
+	<set xpath="/windows/window[@name='windowToolbelt']/@pos">-313, 88</set>
+
+<setattribute xpath="/windows/window[@name='ActiveBuffsWindow']/panel[@name='header']" name="pos">70,-160</setattribute>
+
+	<set xpath="/windows/window[@name='ActiveBuffsWindow']/panel[@name='content']/@pos">70,-205</set>
+	<set xpath="/windows/window[@name='ActiveBuffsWindow']/panel[@name='header']/sprite[@name='windowIcon']/@pos">10,-5</set>
+	<set xpath="/windows/window[@name='ActiveBuffsWindow']/panel[@name='header']/label[@name='characterName']/@pos">75,-5</set>
+
+	<remove xpath="/windows/window[@name='windowBackpack']" />
+
+<append xpath="/windows">
+
+	<!--#$-IGS BEGIN: Adding cursor area. -$#-->
+	<window name="windowBackpack" width="1340" height="538" panel="Center" controller="BackpackWindow" cursor_area="true" >
+	<!--#$-IGS END.-$#-->
+		<panel name="header" width="300" height="120" pos="605,128" depth="1" backgroundspritename="ui_game_panel_header">
+			<sprite depth="3" name="Lamsbackpack" sprite="Lamsbackpack" size="290,50" pos="2,-42" foregroundlayer="true"/>
+
+
+			<rect pos="24,0" width="300" controller="ContainerStandardControls" move_start_bottom_left="true">
+				<button depth="3" name="btnClearInventory" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="250, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}" />
+				<button depth="3" name="btnSort"           sprite="ui_game_symbol_backpack"  tooltip_key="lblSortContainer"  pos="0, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+				<combobox depth="3" name="cbxLockedSlots" pos="110,-7" width="100" height="30" tooltip_key="xuiStashLockedSlots" type="ComboBoxInt" value_min="0" value_max="180" value_wrap="true" value_increment="1" />
+				
+				<rect pos="0, 0" visible="{lootingorvehiclestorage}">
+					<button   depth="3" name="btnMoveAll"          sprite="ui_game_symbol_store_all_down"     tooltip_key="lblStashAll"             pos="80, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+					<button   depth="3" name="btnMoveFillAndSmart" sprite="ui_game_symbol_store_similar_down" tooltip_key="lblStashFillAndSmart" pos="40, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+				</rect>
+			</rect>
+
+			<label depth="2" pos="140,-88" width="100" height="28" text="{currencyamount}" justify="right" />
+			<sprite depth="4" name="costIcon" sprite="ui_game_symbol_coin" size="24,24" pos="260,-90" color="255,215,0" foregroundlayer="true" />
+
+		</panel>
+
+		<panel name="content" width="100%" height="604" depth="0" pos="0,2" disableautobackground="true">
+				<grid depth="10" name="inventory" rows="9" cols="20" pos="3,-3" cell_width="67" cell_height="67" controller="Backpack" repeat_content="true" >
+					<Lam_backpack_item_stack name="0"/>
+				</grid>
+		</panel>
+</window>
+
+</append>
+
+	<remove xpath="/windows/window[@name='windowLooting']" />
+
+<append xpath="/windows">
+
+	<!--#$-IGS BEGIN: Adding cursor area. -$#-->
+	<window name="windowLooting" width="{windowWidth}" height="378" controller="LootWindow" panel="Left" anchor_side="bottomright" visible="false" cursor_area="true" >
+	<!--#$-IGS END.-$#-->
+		<panel name="header" height="43" pos="35,120" depth="0" disableautobackground="true" anchor_left="queue,0,-3" anchor_right="queue,1,0" >
+			<sprite depth="1" name="headerbackground" sprite="ui_game_panel_header" anchor_left="queue,0,-3" anchor_right="queue,1,0" />
+			<label depth="2" name="lootName" pos="39,-6" width="172" height="32" text="{lootcontainer_name}" font_size="32" anchor_left="queue,0,139" anchor_right="queue,1,0" />
+
+			<rect anchor_left="queue,0,0" anchor_right="queue,1,0" pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="{buttons_visible}">
+				<button		depth="3" name="btnSort"             sprite="ui_game_symbol_backpack" 		  tooltip_key="lblSortContainer"  		pos="0,-5"		style="icon32px, press, hover" sound="[paging_click]" />
+				<button		depth="3" name="btnMoveAll"          sprite="ui_game_symbol_store_all_up"     tooltip="{take_all_tooltip}"          pos="60,-22"	style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+				<button		depth="3" name="btnMoveFillAndSmart" sprite="ui_game_symbol_store_similar_up" tooltip_key="xuiLootTakeFillAndSmart" pos="100,-22"	style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+			</rect>
+		</panel>
+		<rect name="content" pos="5,75" >
+			<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" on_press="true" />
+			<grid depth="12" name="queue" rows="30" cols="30" cell_width="67" cell_height="67" repeat_content="true" controller="LootContainer">
+				<Lam_item_stack name="0"/>
+			</grid>
+		</rect>
+	</window>
+
+</append>
+
+</configs>

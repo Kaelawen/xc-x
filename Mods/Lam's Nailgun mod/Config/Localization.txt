@@ -1,0 +1,10 @@
+Key,UsedInMainMenu,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+
+meleeToolRepairT3Nailgun25,,items,Item,New,Lamb Nailgun 25%,,,,,
+meleeToolRepairT3Nailgun25Desc,,items,Item,New,25% less delay then the original nailgun.,,,,,
+meleeToolRepairT3Nailgun50,,items,Item,New,Lamb Nailgun 50%,,,,,
+meleeToolRepairT3Nailgun50Desc,,items,Item,New,50% less delay then the original nailgun.,,,,,
+meleeToolRepairT3Nailgun75,,items,Item,New,Lamb Nailgun 75%,,,,,
+meleeToolRepairT3Nailgun75Desc,,items,Item,New,75% less delay then the original nailgun.,,,,,
+meleeToolRepairT3Nailgun100,,items,Item,New,Lamb Nailgun 100%,,,,,
+meleeToolRepairT3Nailgun100Desc,,items,Item,New,100% less delay then the original nailgun.,,,,,

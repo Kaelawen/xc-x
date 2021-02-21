@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Lam increased crafting queue" />
+		<Description value="Increased crafting queue to 28 and output window to 30 " />
+		<Author value="Lam" />
+		<Version value="19" />
+	</ModInfo>
+</xml>

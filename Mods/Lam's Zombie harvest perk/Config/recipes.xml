@@ -1,0 +1,14 @@
+<configs>
+ 
+<append xpath="/recipes">
+
+<recipe name="ButcherKnife" count="1" tags="learnable,ZombieHarvest">
+	<ingredient name="resourceForgedIron" count="8"/>
+	<ingredient name="resourceWood" count="4"/>
+	<ingredient name="resourceLeather" count="2"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+</recipe>
+
+</append>
+
+</configs>

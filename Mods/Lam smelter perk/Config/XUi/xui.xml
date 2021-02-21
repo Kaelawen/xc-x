@@ -1,0 +1,6 @@
+<configs>
+
+	<set xpath="/xui/ruleset/window_group[@name='workstation_forge']/window[@name='windowToolsForge']/@name">LamwindowToolsForge</set>
+	<set xpath="/xui/ruleset/window_group[@name='workstation_forge']/window[@name='windowForgeInput']/@name">windowThreeForgeInput</set>
+
+</configs>

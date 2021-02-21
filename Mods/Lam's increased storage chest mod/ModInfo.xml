@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Lam's increased storage chest mod" />
+		<Description value="increases the 3 player crafted storage chest's from 48,72,72 to 120 each" />
+		<Author value="Lam" />
+		<Version value="19" />
+	</ModInfo>
+</xml>

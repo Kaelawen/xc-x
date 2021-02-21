@@ -1,0 +1,23 @@
+<configs>
+ 
+<append xpath="/recipes">
+
+<recipe name="meleeToolRepairT3Nailgun25" count="1" craft_time="1">
+	<ingredient name="meleeToolRepairT3Nailgun" count="1"/>
+</recipe>
+
+<recipe name="meleeToolRepairT3Nailgun50" count="1" craft_time="1">
+	<ingredient name="meleeToolRepairT3Nailgun" count="1"/>
+</recipe>
+
+<recipe name="meleeToolRepairT3Nailgun75" count="1" craft_time="1">
+	<ingredient name="meleeToolRepairT3Nailgun" count="1"/>
+</recipe>
+
+<recipe name="meleeToolRepairT3Nailgun100" count="1" craft_time="1">
+	<ingredient name="meleeToolRepairT3Nailgun" count="1"/>
+</recipe>
+
+</append>
+
+</configs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Lam's Nailgun mod" />
+		<Description value="Adds 4 nailguns to the game which are 25,50,75 and 100% less delay then the original." />
+		<Author value="Lam" />
+		<Version value="19" />
+	</ModInfo>
+</xml>

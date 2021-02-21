@@ -1,0 +1,18 @@
+<configs>
+
+<remove xpath="//quest[@id='challenge_nailsomechicks']/requirement" />
+
+	<append xpath="//quest[@id='challenge_nailsomechicks']">
+
+		<requirement type="Group" id="requirementGroupNailgun" value="OR" phase="1">
+		<requirement type="Holding" id="meleeToolRepairT3Nailgun"/>
+		<requirement type="Holding" id="meleeToolRepairT3Nailgun25"/>
+		<requirement type="Holding" id="meleeToolRepairT3Nailgun50"/>
+		<requirement type="Holding" id="meleeToolRepairT3Nailgun75"/>
+		<requirement type="Holding" id="meleeToolRepairT3Nailgun100"/>	
+
+	</requirement>
+
+</append>
+
+</configs>

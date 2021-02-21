@@ -1,0 +1,107 @@
+<configs>
+
+<append xpath="/items">
+
+<item name="ButcherKnife">
+	<property name="Tags" value="ZombieHarvest,HarvestZombie,knife,melee,grunting,light,perkFlurryOfBlows,weapon,meleeWeapon,attAgility,perkDeepCuts,perkTheHuntsman"/>
+	<property name="DisplayType" value="meleeKnife"/>
+		<property name="CustomIcon" value="meleeWpnBladeT1HuntingKnife"/>
+		<property name="CustomIconTint" value="255,155,0"/> 
+	<property name="HoldType" value="32"/>
+	<property name="Meshfile" value="#Other/Items?Weapons/Melee/Knives/hunting_knifePrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="FuelValue" value="100"/>
+	<property name="EconomicValue" value="350"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property name="UnlockedBy" value="ZombieHarvest"/>
+	<property name="ShowQuality" value="true"/>
+
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value=".1"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="5"/>
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".25"/>
+		<property name="GrazeEnd" value=".35"/>
+		<property name="SwingDegrees" value="90"/>
+		<property name="SwingAngle" value="90"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalstaborganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value=".1"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="5"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".2"/>
+		<property name="GrazeEnd" value=".3"/>
+		<property name="SwingDegrees" value="80"/>
+		<property name="SwingAngle" value="140"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalstaborganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+
+	<effect_group name="ButcherKnife">
+		<passive_effect name="EntityDamage" operation="base_set" value="6.1" tags="ZombieHarvest"/> <!-- meleeWpnBladeT1HuntingKnife -->
+		<passive_effect name="BlockDamage" operation="base_set" value="6.1" tags="ZombieHarvest"/> <!-- meleeWpnBladeT1HuntingKnife -->
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="120" tags="ZombieHarvest,perkFlurryOfBlows"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="8.2" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="462,1154" tier="1,6" tags="ZombieHarvest"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="ZombieHarvest"/>
+		<passive_effect name="MaxRange" operation="base_set" value="1.3" tags="ZombieHarvest"/>
+		<passive_effect name="BlockRange" operation="base_set" value="1.3" tags="ZombieHarvest"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15" tags="ZombieHarvest"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="ZombieHarvest"/> <!-- tier bonus -->
+
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="ZombieHarvest"/> <!-- random EntityDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="ZombieHarvest"/> <!-- tier bonus -->
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value=".6" tags="organic"/>
+		<!-- <passive_effect name="DamageModifier" operation="perc_add" value="0" tags="organic"/> affects organic block harvesting based on block.material.damage_category, not animal corpse harvesting -->
+		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+		<!--<passive_effect name="BlockDamage" operation="perc_add" value="6" tags="blockButcher"/>-->
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="base_add" value="6" tags="secondary"/>
+		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="base_add" value="6" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="base_add" value="-60" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="12.3" tags="secondary"/>
+	</effect_group>
+
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="RepairExpMultiplier" value="5.5"/>
+</item>
+
+</append>
+
+</configs>
